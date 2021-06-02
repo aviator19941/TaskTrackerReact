@@ -1,10 +1,19 @@
-const Header = (props) => {
+import PropTypes from 'prop-types'
+
+const Header = ({ title }) => {
     return (
         <header>
-            <h1>Task Tracker</h1>
-            <h2>{props.title}</h2>
+            <h1>{title}</h1>
         </header>
     )
+}
+
+Header.defaultProps = {
+    title: 'Task Tracker',
+}
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
 }
 
 export default Header
